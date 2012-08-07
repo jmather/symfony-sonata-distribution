@@ -1,0 +1,21 @@
+sonata_page_cache:
+    resource: '@SonataCacheBundle/Resources/config/routing/cache.xml'
+    prefix: /
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_profile:
+    resource: "@SonataUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
