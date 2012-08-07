@@ -1,3 +1,14 @@
+Symfony Sonata Distribution
+===========================
+
+This is a simple setup to allow you to save a ton of time setting up your
+initial playground.
+
+It comes preconfigured using Sonata Admin, Doctrine ORM, FOS UserBundle
+and Sonata User.
+
+I hope it helps, and I will work to keep it updated.
+
 Symfony Standard Edition
 ========================
 
