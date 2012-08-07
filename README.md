@@ -9,6 +9,19 @@ and Sonata User.
 
 I hope it helps, and I will work to keep it updated.
 
+The steps to get up and running are fairly simple:
+
+    git clone https://github.com/jmather/symfony-sonata-distribution.git
+    php composer.phar install
+
+Now you edit `app/config/parameters.yml` to have your database details, and then:
+
+    php app/console doctrine:schema:create
+    php app/console fos:user:create demo demo@example.com demo
+    php app/console fos:user:promote --super demo
+
+- - -
+
 Symfony Standard Edition
 ========================
 
