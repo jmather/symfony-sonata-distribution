@@ -26,6 +26,7 @@
  * ************** CAUTION **************
  *
  * @author Tobias Schultze <http://tobion.de>
+ * @author Fabien Potencier <fabien@symfony.com>
  */
 class Requirement
 {
@@ -482,12 +483,32 @@ class SymfonyRequirements extends RequirementCollection
             'Add "<strong>phar</strong>" to <strong>suhosin.executor.include.whitelist</strong> in php.ini<a href="#phpini">*</a>.'
         );
 
+        if (extension_loaded('xdebug')) {
+            $this->addPhpIniRequirement(
+                'xdebug.show_exception_trace', false, true,
+                'xdebug.show_exception_trace setting must be disabled',
+                'Set the "<strong>xdebug.show_exception_trace</strong>" setting to "Off" in php.ini<a href="#phpini">*</a>.'
+            );
+
+            $this->addPhpIniRequirement(
+                'xdebug.scream', false, true,
+                'xdebug.scream setting must be disabled',
+                'Set the "<strong>xdebug.scream</strong>" setting to "Off" in php.ini<a href="#phpini">*</a>.'
+            );
+        }
+
         $pcreVersion = defined('PCRE_VERSION') ? (float) PCRE_VERSION : null;
 
         $this->addRequirement(
             null !== $pcreVersion && $pcreVersion > 8.0,
             sprintf('PCRE extension must be available and at least 8.0 (%s installed)', $pcreVersion ? $pcreVersion : 'not'),
             'Upgrade your <strong>PCRE</strong> extension (8.0+)'
+        );
+
+        $this->addRequirement(
+            version_compare($installedPhpVersion, '5.3.16', '!='),
+            'Symfony won\'t work properly with PHP 5.3.16',
+            'Install PHP 5.3.17 or newer'
         );
 
         /* optional recommendations follow */
@@ -508,6 +529,12 @@ class SymfonyRequirements extends RequirementCollection
             version_compare($installedPhpVersion, '5.3.8', '>='),
             sprintf('Annotations might not work properly due to the PHP bug #55156 before PHP 5.3.8 (%s installed)', $installedPhpVersion),
             'Install PHP 5.3.8 or newer if your project uses annotations'
+        );
+
+        $this->addRecommendation(
+            !(extension_loaded('intl') && null === new Collator('fr_FR')),
+            'intl extension should be correctly configured',
+            'The intl extension does not behave properly. This problem is typical on PHP 5.3.X x64 WIN builds'
         );
 
         $this->addRecommendation(

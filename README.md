@@ -16,9 +16,9 @@ The steps to get up and running are fairly simple:
 
 Now you edit `app/config/parameters.yml` to have your database details, and then:
 
-    php app/console doctrine:schema:create
-    php app/console fos:user:create demo demo@example.com demo
-    php app/console fos:user:promote --super demo
+    php app/console doctrine:migrations:migrate
+
+Now you can log in at /admin/dashboard with the username 'demo' and the password 'demo'.
 
 - - -
 

@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "*",
         "sonata-project/admin-bundle": "*",
         "sonata-project/doctrine-orm-admin-bundle": "*",
-        "sonata-project/user-bundle": "*"
+        "sonata-project/user-bundle": "*",
+        "doctrine/doctrine-migrations-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [
