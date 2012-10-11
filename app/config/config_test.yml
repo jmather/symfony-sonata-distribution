@@ -12,3 +12,9 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        memory: true
+        path: app/cache/test/test.db

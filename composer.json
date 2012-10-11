@@ -22,7 +22,10 @@
         "sonata-project/admin-bundle": "*",
         "sonata-project/doctrine-orm-admin-bundle": "*",
         "sonata-project/user-bundle": "*",
-        "doctrine/doctrine-migrations-bundle": "*"
+        "sonata-project/cache-bundle": "*",
+        "doctrine/doctrine-migrations-bundle": "*",
+	"instaclick/base-test-bundle": "dev-master",
+	"doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

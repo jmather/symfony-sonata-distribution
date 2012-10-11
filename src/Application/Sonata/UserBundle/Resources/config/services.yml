@@ -1,0 +1,19 @@
+parameters:
+  sonata.user.admin.user.class: Application\Sonata\UserBundle\Admin\Entity\UserAdmin
+  sonata.user.profile.form.type: sonata_user_profile
+services:
+  sonata.user.profile.form.type:
+    class: Application\Sonata\UserBundle\Form\Type\ProfileType
+    arguments: [ %fos_user.model.user.class% ]
+    tags:
+      - { name: form.type, alias: sonata_user_profile }
+
+  sonata.user.admin.user:
+    class: %sonata.user.admin.user.class%
+    arguments: [ null, %sonata.user.admin.user.entity%, %sonata.user.admin.user.controller% ]
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: %sonata.user.admin.groupname%, label: users, label_catalogue: SonataUserBundle, label_translator_strategy: sonata.admin.label.strategy.underscore }
+    calls:
+      - [ setUserManager, [ @fos_user.user_manager ] ]
+      - [ setTranslationDomain, [ %sonata.user.admin.user.translation_domain% ] ]
+      - [ setSecurityContext, [ @security.context ] ]
