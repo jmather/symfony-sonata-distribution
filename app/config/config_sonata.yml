@@ -1,5 +1,5 @@
 framework:
-    translator:      ~
+    translator:      { fallback: %locale% }
 
 sonata_admin:
     title:      Sonata Project
