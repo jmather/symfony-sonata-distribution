@@ -1,5 +1,5 @@
 {
-    "hash": "d0f7ddf4607bf5a018fcc278415212ec",
+    "hash": "5828c68675743852b51c43f0161c5513",
     "packages": [
         {
             "name": "doctrine/common",
@@ -127,16 +127,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.3.x-dev",
+            "version": "2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "4c33f633c48eeafe3408b308f6fc51743a21a3b7"
+                "reference": "2.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/4c33f633c48eeafe3408b308f6fc51743a21a3b7.zip",
-                "reference": "4c33f633c48eeafe3408b308f6fc51743a21a3b7",
+                "url": "https://github.com/doctrine/dbal/archive/2.3.2.zip",
+                "reference": "2.3.2",
                 "shasum": ""
             },
             "require": {
@@ -559,20 +559,20 @@
             "source": {
                 "type": "git",
                 "url": "http://github.com/instaclick/ICBaseTestBundle",
-                "reference": "cccf53aed7416fb26bfde71c19a2f9abea4c5319"
+                "reference": "9d43bbed1989a528576c87fc59e2a759708f11dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/instaclick/ICBaseTestBundle/archive/cccf53aed7416fb26bfde71c19a2f9abea4c5319.zip",
-                "reference": "cccf53aed7416fb26bfde71c19a2f9abea4c5319",
+                "url": "https://github.com/instaclick/ICBaseTestBundle/archive/9d43bbed1989a528576c87fc59e2a759708f11dc.zip",
+                "reference": "9d43bbed1989a528576c87fc59e2a759708f11dc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": ">=2.0,<2.2-dev",
-                "doctrine/doctrine-fixtures-bundle": "dev-master"
+                "doctrine/doctrine-fixtures-bundle": "dev-master",
+                "symfony/framework-bundle": ">=2.0,<3.0-dev"
             },
-            "time": "2012-11-23 19:10:47",
+            "time": "2013-01-18 21:32:17",
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
@@ -1468,12 +1468,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrineORMAdminBundle.git",
-                "reference": "34f757e564bf1a8fa966f55f89899fa638341135"
+                "reference": "effba130f50bc94634634f1dfab82dae674c42b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/archive/34f757e564bf1a8fa966f55f89899fa638341135.zip",
-                "reference": "34f757e564bf1a8fa966f55f89899fa638341135",
+                "url": "https://github.com/sonata-project/SonataDoctrineORMAdminBundle/archive/effba130f50bc94634634f1dfab82dae674c42b0.zip",
+                "reference": "effba130f50bc94634634f1dfab82dae674c42b0",
                 "shasum": ""
             },
             "require": {
@@ -1481,7 +1481,7 @@
                 "doctrine/orm": ">=2.2,<2.4-dev",
                 "symfony/symfony": ">=2.1,<2.3-dev"
             },
-            "time": "2013-01-12 17:19:35",
+            "time": "2013-01-16 00:00:10",
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
@@ -2183,9 +2183,7 @@
             ]
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
         {
             "alias": "dev-master",
@@ -2194,9 +2192,14 @@
             "package": "friendsofsymfony/user-bundle"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
+        "sonata-project/admin-bundle": 20,
+        "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/user-bundle": 20,
+        "sonata-project/cache-bundle": 20,
+        "doctrine/migrations": 20,
+        "doctrine/doctrine-migrations-bundle": 20,
         "instaclick/base-test-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20
     }
