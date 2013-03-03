@@ -15,7 +15,7 @@ sonata_admin:
         show:                     SonataAdminBundle:CRUD:show.html.twig
         edit:                     SonataAdminBundle:CRUD:edit.html.twig
         list_block:               SonataAdminBundle:Block:block_admin_list.html.twig
-        user_block:               SonataAdminBundle:Core:user_block.html.twig
+        user_block:               SonataUserBundle:Admin\Core:user_block.html.twig
         preview:                  SonataAdminBundle:CRUD:preview.html.twig
         history:                  SonataAdminBundle:CRUD:history.html.twig
         history_revision:         SonataAdminBundle:CRUD:history_revision.html.twig
