@@ -20,8 +20,11 @@ Now you edit `app/config/parameters.yml` to have your database details, and then
 
 After copy/edit the `app/config/parameters.dist.yml` with proper DB setting and creating the DB you have to init it.
 Initializing the DB:
+
     ./app/console doctrine:schema:create
+
 After that you have to create username to access the dashboard and give him proper credentials role - ROLE_SONATA_ADMIN :
+
     ./app/console fos:user:create
     ./app/console fos:user:promote
 
