@@ -1,6 +1,8 @@
 Symfony Sonata Distribution
 ===========================
 
+    NOTE: For Symfony 2.1, use the 2.1 branch.
+
 This is a simple setup to allow you to save a ton of time setting up your
 initial playground.
 
