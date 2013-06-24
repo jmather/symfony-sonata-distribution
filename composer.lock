@@ -1094,12 +1094,12 @@
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioDistributionBundle",
+                "url": "https://github.com/sensiolabs/SensioDistributionBundle",
                 "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioDistributionBundle/archive/v2.1.7.zip",
+                "url": "https://github.com/sensiolabs/SensioDistributionBundle/archive/v2.1.7.zip",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
@@ -1140,12 +1140,12 @@
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
+                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle",
                 "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/archive/v2.1.7.zip",
+                "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/archive/v2.1.7.zip",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
@@ -1187,12 +1187,12 @@
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioGeneratorBundle",
+                "url": "https://github.com/sensiolabs/SensioGeneratorBundle",
                 "reference": "v2.1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/archive/v2.1.7.zip",
+                "url": "https://github.com/sensiolabs/SensioGeneratorBundle/archive/v2.1.7.zip",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
