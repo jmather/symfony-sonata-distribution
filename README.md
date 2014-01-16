@@ -16,21 +16,32 @@ The steps to get up and running are fairly simple:
     git clone https://github.com/jmather/symfony-sonata-distribution.git
     php composer.phar install
 
-Now you edit `app/config/parameters.yml` to have your database details, and then:
+Copy and edit the `app/config/parameters.dist.yml` with proper DB setting and creating the DB you have to init it.
 
-    php app/console doctrine:migrations:migrate
-
-After copy/edit the `app/config/parameters.dist.yml` with proper DB setting and creating the DB you have to init it.
 Initializing the DB:
 
     ./app/console doctrine:schema:create
 
-After that you have to create username to access the dashboard and give him proper credentials role - ROLE_SONATA_ADMIN :
+    php app/console doctrine:migrations:migrate (simply inserts user/pass demo/demo)
 
-    ./app/console fos:user:create
-    ./app/console fos:user:promote
 
-Now you can login with the created user.
+Optional: If you want to use another user than demo/demo you have to create username to access the dashboard and give him proper credentials role - ROLE_SONATA_ADMIN :
+
+    ./app/console fos:user:create username emai@example.com password
+    ./app/console fos:user:promote username ROLE_SONATA_ADMIN
+
+Then install assets:
+    ./app/console assets:install --symlink --relative web
+
+Warning: Currently .htaccess is configured to use app_dev.php but not app.dev (production - no debug). When you launch your application don't forget to use app.php.
+
+
+Now you can login with demo/demo or new user you've created.
+
+
+
+NOTES FROM Symfony installation (informational): 
+
 
 - - -
 

@@ -18,7 +18,6 @@ sonata_admin:
         user_block:               SonataUserBundle:Admin\Core:user_block.html.twig
         preview:                  SonataAdminBundle:CRUD:preview.html.twig
         history:                  SonataAdminBundle:CRUD:history.html.twig
-        history_revision:         SonataAdminBundle:CRUD:history_revision.html.twig
         action:                   SonataAdminBundle:CRUD:action.html.twig
         short_object_description: SonataAdminBundle:Helper:short-object-description.html.twig
         delete:                   SonataAdminBundle:CRUD:delete.html.twig
@@ -66,6 +65,8 @@ sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.admin.block.search_result:
             contexts:   [admin]
 
         #sonata.admin_doctrine_orm.block.audit:
