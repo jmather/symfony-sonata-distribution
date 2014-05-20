@@ -16,8 +16,6 @@ The steps to get up and running are fairly simple:
     git clone https://github.com/jmather/symfony-sonata-distribution.git
     php composer.phar install
 
-Copy and edit the `app/config/parameters.dist.yml` with proper DB setting and creating the DB you have to init it.
-
 Initializing the DB:
 
     ./app/console doctrine:schema:create
