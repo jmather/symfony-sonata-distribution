@@ -25,7 +25,7 @@ The steps to get up and running are fairly simple:
 
 ### Create the users
 
-You can either create a handful of users like this (one of the usernames is 'admin' with password 'test')
+You can either create a handful of users like this (one of the usernames is 'superadmin' with password 'test')
 
     ./app/console doctrine:fixtures:load
 
@@ -44,7 +44,7 @@ Or you can manually create a user yourself
 
 ### Login
 
-Now you can login as user 'admin' with password 'test' at
+Now you can login as user 'superadmin' with password 'test' at
 
     http://localhost:8000/admin
 
