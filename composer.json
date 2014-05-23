@@ -1,6 +1,6 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "name": "jmather/symfony-sonata-distribution",
+    "description": "The \"Symfony Sonata Edition\" distribution",
     "autoload": {
         "psr-0": { "": "src/" }
     },
