@@ -1,77 +1,22 @@
 Symfony Sonata Distribution
 ===========================
 
-    NOTE: For Symfony 2.1, use the 2.1 branch.
+Welcome to the Symfony Sonata Distribution - a fully-functional Symfony2
+Sonata application that you can use as the skeleton for your new application.
 
-This is a simple setup to allow you to save a ton of time setting up your
-initial playground.
-
-It comes preconfigured using Sonata Admin, Doctrine ORM, FOS UserBundle
-and Sonata User.
-
-I hope it helps, and I will work to keep it updated.
-
-## Steps
-
-The steps to get up and running are fairly simple:
-
-    git clone https://github.com/jmather/symfony-sonata-distribution.git
-    cd symfony-sonata-distribution
-    php composer.phar install
-
-### Initializing the DB
-
-    ./app/console doctrine:schema:create
-
-### Create the users
-
-You can either create a handful of users like this (one of the usernames is 'superadmin' with password 'test')
-
-    ./app/console doctrine:fixtures:load
-
-Or you can manually create a user yourself
-
-    ./app/console fos:user:create username emai@example.com password
-    ./app/console fos:user:promote username ROLE_SONATA_ADMIN
-
-### Install assets:
-
-    ./app/console assets:install --symlink --relative web
-
-### Start the server:
-
-    ./app/console server:run
-
-### Login
-
-Now you can login as user 'superadmin' with password 'test' at
-
-    http://localhost:8000/admin
-
-## Warning
-
-Currently .htaccess is configured to use app_dev.php but not app.dev (production - no debug). When you launch your application don't forget to use app.php.
-
-
-NOTES FROM Symfony installation (informational): 
-
-
-- - -
-
-Symfony Standard Edition
-========================
-
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+This distribution exists to save you from repeating all the steps needed to create
+a basic Sonata app.
 
 This document contains information on how to download, install, and start
-using Symfony. For a more detailed explanation, see the [Installation][1]
+using Symfony with Sonata. For a more detailed explanation, see the [Installation][1]
 chapter of the Symfony Documentation.
 
-1) Installing the Standard Edition
-----------------------------------
+NOTE: For older Symfony versions use the corresponding branch.
 
-When it comes to installing the Symfony Standard Edition, you have the
+1) Installing the Sonata Distribution
+-------------------------------------
+
+When it comes to installing the Symfony Sonata Distribution, you have the
 following options.
 
 ### Use Composer (*recommended*)
@@ -84,21 +29,20 @@ http://getcomposer.org/ or just run the following command:
 
     curl -s http://getcomposer.org/installer | php
 
-Then, use the `create-project` command to generate a new Symfony application:
+Then, use the `create-project` command to generate a new Symfony Sonata application:
 
-    php composer.phar create-project symfony/framework-standard-edition path/to/install
+    php composer.phar create-project -s dev jmather/symfony-sonata-distribution path/to/install
 
 Composer will install Symfony and all its dependencies under the
 `path/to/install` directory.
 
 ### Download an Archive File
 
-To quickly test Symfony, you can also download an [archive][3] of the Standard
-Edition and unpack it somewhere under your web server root directory.
+To quickly test Symfony Sonata, you can also download an [archive][3] of the Sonata
+Distribution and unpack it somewhere under your web server root directory.
 
-If you downloaded an archive "without vendors", you also need to install all
-the necessary dependencies. Download composer (see above) and run the
-following command:
+You also need to install all the necessary dependencies. 
+Download composer (see above) and run the following command:
 
     php composer.phar install
 
@@ -118,10 +62,49 @@ Access the `config.php` script from a browser:
 
 If you get any warnings or recommendations, fix them before moving on.
 
-3) Browsing the Demo Application
---------------------------------
+3) Set up, initialize and browse the app
+----------------------------------------
 
-Congratulations! You're now ready to use Symfony.
+### Initializing the DB
+
+Before you can run the server and log in to Sonata you need to create the
+tables first.
+
+    ./app/console doctrine:schema:create
+
+### Create the users
+
+You can either create a handful of users like this (one of the usernames is 
+'superadmin' with password 'test')
+
+    ./app/console doctrine:fixtures:load
+
+Or you can manually create a user yourself
+
+    ./app/console fos:user:create username emai@example.com password
+    ./app/console fos:user:promote username ROLE_SONATA_ADMIN
+
+### Install assets:
+
+    ./app/console assets:install --symlink --relative web
+
+### Start the server:
+
+Congratulations! You're now ready to use Symfony Sonata
+
+    ./app/console server:run
+
+### Login
+
+Now you can login as user 'superadmin' with password 'test' at
+
+    http://localhost:8000/admin
+
+## Warning
+
+Currently .htaccess is configured to use app_dev.php but not app.php (production - no debug). When you launch your application don't forget to use app.php.
+
+## Browsing the Demo Application
 
 From the `config.php` page, click the "Bypass configuration and go to the
 Welcome page" link to load up your first Symfony page.
@@ -162,8 +145,29 @@ playing with it, you can remove it by following these steps:
     `security.firewalls.secured_area` entries in the `security.yml` file or
     tweak the security configuration to fit your needs.
 
-What's inside?
----------------
+What's inside Symfony Sonata Distribution?
+------------------------------------------
+
+The Symfony Sonata Distribution is based on the Symfony Standard Edition.
+Additionally the following bundles are used to configure a fully functional
+Sonata application:
+
+* [**SonataCoreBundle**][16] - The foundation on which the Sonata bundles rest
+
+* [**SonataAdminBundle**][17] - The main bundle needed to create the admin interface
+
+* [**SonataDoctrineORMAdminBundle**][18] - Integrates Doctrine ORM project with the admin bundle
+
+* [**FOSUserBundle**][19] - Provides user management
+
+* [**SonataUserBundle**][20] - Integrates the FOSUserBundle and adds some features
+
+* [**SonataBlockBundle**][21] - This bundle provides a block management solution
+
+There are some more bundles necessary to run the application so take a look at the composer.json file.
+
+What's inside Symfony Standard Edition
+--------------------------------------
 
 The Symfony Standard Edition is configured with the following defaults:
 
@@ -217,18 +221,25 @@ It comes pre-configured with the following bundles:
 
 Enjoy!
 
-[1]:  http://symfony.com/doc/2.1/book/installation.html
+[1]:  http://symfony.com/doc/2.4/book/installation.html
 [2]:  http://getcomposer.org/
-[3]:  http://symfony.com/download
-[4]:  http://symfony.com/doc/2.1/quick_tour/the_big_picture.html
-[5]:  http://symfony.com/doc/2.1/index.html
-[6]:  http://symfony.com/doc/2.1/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  http://symfony.com/doc/2.1/book/doctrine.html
-[8]:  http://symfony.com/doc/2.1/book/templating.html
-[9]:  http://symfony.com/doc/2.1/book/security.html
-[10]: http://symfony.com/doc/2.1/cookbook/email.html
-[11]: http://symfony.com/doc/2.1/cookbook/logging/monolog.html
-[12]: http://symfony.com/doc/2.1/cookbook/assetic/asset_management.html
+[3]:  https://github.com/jmather/symfony-sonata-distribution/archive/master.zip
+[4]:  http://symfony.com/doc/2.4/quick_tour/the_big_picture.html
+[5]:  http://symfony.com/doc/2.4/index.html
+[6]:  http://symfony.com/doc/2.4/bundles/SensioFrameworkExtraBundle/index.html
+[7]:  http://symfony.com/doc/2.4/book/doctrine.html
+[8]:  http://symfony.com/doc/2.4/book/templating.html
+[9]:  http://symfony.com/doc/2.4/book/security.html
+[10]: http://symfony.com/doc/2.4/cookbook/email.html
+[11]: http://symfony.com/doc/2.4/cookbook/logging/monolog.html
+[12]: http://symfony.com/doc/2.4/cookbook/assetic/asset_management.html
 [13]: http://jmsyst.com/bundles/JMSSecurityExtraBundle/master
 [14]: http://jmsyst.com/bundles/JMSDiExtraBundle/master
-[15]: http://symfony.com/doc/2.1/bundles/SensioGeneratorBundle/index.html
+[15]: http://symfony.com/doc/2.4/bundles/SensioGeneratorBundle/index.html
+
+[16]: http://sonata-project.org/bundles/core/master/doc/index.html
+[17]: http://sonata-project.org/bundles/admin/2-2/doc/index.html
+[18]: http://sonata-project.org/bundles/doctrine-orm-admin/2-2/doc/index.html
+[19]: https://github.com/FriendsOfSymfony/FOSUserBundle
+[20]: http://sonata-project.org/bundles/user/master/doc/reference/installation.html
+[21]: http://sonata-project.org/bundles/block/master/doc/index.html
